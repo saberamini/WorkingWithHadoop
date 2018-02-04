@@ -42,4 +42,16 @@ Next we will list the files that are in our HDFS.
 
 This should not return anything because we have just formatted the file system.
 
-List the hdfs files
+We now will create a directory called user using in our HDFS
+
+> hdfs dfs -mkdir /user
+
+Go to the webbrowser, click on the "Utilities" menu and click on "Browse the file system".  You will see the user folder and the statistics.
+
+We will list the files again.
+
+> hdfs dfs -ls /
+
+You should see the folder user listed.
+
+We willn now copy 
