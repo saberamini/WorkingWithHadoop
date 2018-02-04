@@ -54,4 +54,18 @@ We will list the files again.
 
 You should see the folder user listed.
 
-We willn now copy 
+We willn now copy the created file a few times:
+
+> hdfs dfs -copyFromLocal ~/my_file.txt /user
+
+> hdfs dfs -copyFromLocal ~/my_file.txt /user/my_file2.txt
+
+> hdfs dfs -copyFromlocal ~/my_file.txt /user/my_file3.txt
+
+You can now list the files in the new folder
+
+> hdfs dfs -ls /user
+
+Remove the files with a name starting with my_file
+
+> hdfs dfs -rm /user/my_file*
