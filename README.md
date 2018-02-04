@@ -66,6 +66,18 @@ You can now list the files in the new folder
 
 > hdfs dfs -ls /user
 
+You can also use your browser and see the files list under "user" in the under "Utilities" --> "Browse the file system"
+
 Remove the files with a name starting with my_file
 
 > hdfs dfs -rm /user/my_file*
+
+YOu should see the files removed.
+
+Finally you can delete the file "user"
+
+> hdfs dfs -rmdir /user
+
+And you should see it removed (either on the webbrowser or on the command line using the command shown above)
+
+
