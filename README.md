@@ -17,10 +17,29 @@ Once it is done, you can look at the information on your file system in the brow
 
 > http://localhost:50070
 
+Take a look around the site.  It gives you a lot of information and you will use this as an administrator to troubleshoot issues with your Hadoop setup.
+
 Now we want to start YARN.  Remember YARN stands for "Yet Another Resource Locater".  It is an improved version of MapReduce and it is sometimes called MapReduce 2.0
 
 > $HADOOP_HOME/sbin/start-yarn.sh
 
 > $HADOOP_HOME/sbin/mr-jobhistory-daemon.sh start historyserver
 
+Finally, as a sanity check, we will make sure our java processes are running:
 
+> jps 
+
+You should see about 5 node processes running
+# Test the HDFS 
+
+Create a txt file in your local home folder.
+
+> echo "Hello this will be my first distributed and fault-tolerant data set\!" cat >> my_file.txt
+
+Next we will list the files that are in our HDFS.
+
+> hdfs dfs -ls /
+
+This should not return anything because we have just formatted the file system.
+
+List the hdfs files
