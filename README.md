@@ -23,13 +23,24 @@ Now we want to start YARN.  Remember YARN stands for "Yet Another Resource Locat
 
 > $HADOOP_HOME/sbin/start-yarn.sh
 
+Start the History Server
+
 > $HADOOP_HOME/sbin/mr-jobhistory-daemon.sh start historyserver
 
 Finally, as a sanity check, we will make sure our java processes are running:
 
 > jps 
 
-You should see about 5 node processes running
+You should see about 5 node processes running, soimething like:
+```
+8065 SecondaryNameNode
+8243 ResourceManager
+8676 JobHistoryServer
+7877 DataNode
+7765 NameNode
+8717 Jps
+```
+
 # Test the HDFS 
 
 Create a txt file in your local home folder.
