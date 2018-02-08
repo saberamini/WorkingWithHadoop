@@ -31,7 +31,7 @@ Finally, as a sanity check, we will make sure our java processes are running:
 
 > jps 
 
-You should see about 5 node processes running, soimething like:
+You should see about 5 node processes running, something like (may look different in your machine):
 ```
 8065 SecondaryNameNode
 8243 ResourceManager
