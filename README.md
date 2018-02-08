@@ -71,7 +71,7 @@ We willn now copy the created file a few times:
 
 > hdfs dfs -copyFromLocal ~/my_file.txt /user/my_file2.txt
 
-> hdfs dfs -copyFromlocal ~/my_file.txt /user/my_file3.txt
+> hdfs dfs -copyFromLocal ~/my_file.txt /user/my_file3.txt
 
 You can now list the files in the new folder
 
