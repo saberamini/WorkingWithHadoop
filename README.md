@@ -3,6 +3,9 @@
 Before you start, take a <b>snapshot</b> of your virtual machine after you have setup Hadoop.  
 This way, you can "go back" to a fresh install in case something "messes up" in the process.
 
+## Make sure to switch to hduser
+
+> su hduser
 
 Startup your DFS - distributed file system. (takes a bit of time).
 Remember we only have a single node (your virtual machine) so there is not a lot of parallel processing but the elements are there even in a single node and this allows us to see if everything in our setup is working.
