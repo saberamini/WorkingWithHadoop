@@ -3,7 +3,9 @@
 Before you start, take a <b>snapshot</b> of your virtual machine after you have setup Hadoop.  
 This way, you can "go back" to a fresh install in case something "messes up" in the process.
 
-## Make sure to switch to hduser
+## Make sure to you are logged in as hduser
+
+If not, you can always switch user using the su command:
 
 > su hduser
 
