@@ -9,6 +9,8 @@ If not, you can always switch user using the su command:
 
 > su hduser
 
+The following commands are used to confirm that your Hadoop setup was done correctly.  If you get an error in any of these commands, try to debug it or ask me to help you out.  Errors generally mean that something in the setup phase was overlooked.
+
 Startup your DFS - distributed file system. (takes a bit of time).
 Remember we only have a single node (your virtual machine) so there is not a lot of parallel processing but the elements are there even in a single node and this allows us to see if everything in our setup is working.
 
@@ -22,7 +24,7 @@ Once it is done, you can look at the information on your file system in the brow
 
 > http://localhost:50070
 
-Take a look around the site.  It gives you a lot of information and you will use this as an administrator to troubleshoot issues with your Hadoop setup.
+Take a look around the site.  It gives you a lot of information and you will use this as an administrator to troubleshoot issues with your Hadoop setup.  This is if you are using the plain Vanilla Hadoop setup.  Remember, most companies these days buy a commerical cloud version of Hadoop which has a lot of nice monitoring tools.  We will look at some of these commerical setups later.
 
 Now we want to start YARN.  Remember YARN stands for "Yet Another Resource Locater".  It is an improved version of MapReduce and it is sometimes called MapReduce 2.0
 
@@ -36,19 +38,19 @@ Finally, as a sanity check, we will make sure our java processes are running:
 
 > jps 
 
-You should see about 5 node processes running, something like (may look different in your machine):
+You should see about 6 node processes running, something like (may look different in your machine):
 ```
-8065 SecondaryNameNode
-8243 ResourceManager
-8676 JobHistoryServer
-7877 DataNode
-7765 NameNode
-8717 Jps
+2614 ResourceManager
+2102 NameNode
+2727 NodeManager
+2216 DataNode
+3083 Jps
+3035 JobHistoryServer
 ```
 
 # Test the HDFS 
 
-Create a txt file in your local home folder.
+Create a text file in your local home folder.
 
 > echo "Hello this will be my first distributed and fault-tolerant data set\!" cat >> my_file.txt
 
@@ -58,17 +60,21 @@ Next we will list the files that are in our HDFS.
 
 This should not return anything because we have just formatted the file system.
 
+```
+ls: `.': No such file or directory
+```
+
 We now will create a directory called user using in our HDFS
 
 > hdfs dfs -mkdir /user
 
-Go to the webbrowser, click on the "Utilities" menu and click on "Browse the file system".  You will see the user folder and the statistics.
+Once this is completed, go to the webbrowser, click on the "Utilities" menu and click on "Browse the file system".  You will see the user folder and the statistics.
 
 We will list the files again.
 
 > hdfs dfs -ls /
 
-You should see the folder user listed.
+You should see the folder user listed (as also seen on your browser).
 
 We willn now copy the created file a few times:
 
@@ -88,12 +94,12 @@ Remove the files with a name starting with my_file
 
 > hdfs dfs -rm /user/my_file*
 
-YOu should see the files removed.
+You should see the files removed.
 
-Finally you can delete the file "user"
+Finally you can delete the directory "user"
 
 > hdfs dfs -rmdir /user
 
 And you should see it removed (either on the webbrowser or on the command line using the command shown above)
 
-
+That's it! We are now ready to use Hadoop for some interesting things.  The perenial example is to use MapReduce to parse a text and count the number of words.  We will do this in the next tutorial.
