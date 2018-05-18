@@ -20,7 +20,7 @@ Pay attention to the log outputs. You need to get into the habit of always check
 
 Type "Yes" and press enter when asked "Are you sure you want to continue connecting"
 
-Once it is done, you can look at the information on your file system in the browswer.  Open up firefox in your virtual machine (not your native operating system) and go to the address:
+Once it is done, you can look at the information on your file system in the browser.  Open up firefox in your virtual machine (not your native operating system) and go to the address:
 
 > http://localhost:50070
 
@@ -76,7 +76,7 @@ We will list the files again.
 
 You should see the folder user listed (as also seen on your browser).
 
-We willn now copy the created file a few times:
+We will now copy the created file a few times:
 
 > hdfs dfs -copyFromLocal ~/my_file.txt /user
 
